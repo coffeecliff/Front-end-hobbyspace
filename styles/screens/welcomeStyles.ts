@@ -10,9 +10,10 @@ export const welcomeStyles = StyleSheet.create({
     },
 
     logo: {
-        width: 160,
-        height: 160,
-        marginBottom: 20,
+        width: 520,     // 🔥 maior
+        height: 400,
+        marginTop: -200, // 🔥 sobe a logo
+        marginBottom: 10,
     },
 
     title: {
@@ -23,9 +24,9 @@ export const welcomeStyles = StyleSheet.create({
     },
 
     subtitle: {
-        fontSize: 14,
+        fontSize: 18,
         color: '#777',
-        marginBottom: 30,
+        marginBottom: 60,
     },
 
     mainButton: {

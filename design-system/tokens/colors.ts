@@ -104,3 +104,5 @@ export const darkTheme: ColorTokens = {
     otherText: '#F5F3FF',
   }
 };
+
+export const Colors = lightTheme;

@@ -7,20 +7,21 @@ export default function Index() {
         <View style={styles.container}>
 
             {/* Logo no topo */}
-            {/* <Image
-                source={require('../../assets/logo.png')}
+          <Image
+                source={require('../assets/logotextotransparente.png')}
                 style={styles.logo}
                 resizeMode="contain"
-            /> */}
+            />
 
             {/* Título */}
-            <Text style={styles.title}>HobbySpace</Text>
             <Text style={styles.subtitle}>Seu próximo hobbie começa aqui.</Text>
 
             {/* Botão principal */}
-            <Pressable style={styles.mainButton}>
-                <Text style={styles.mainButtonText}>Começar agora →</Text>
-            </Pressable>
+            <Link href="/auth/register" asChild>
+                <Pressable style={styles.mainButton}>
+                    <Text style={styles.mainButtonText}>Começar agora →</Text>
+                </Pressable>
+            </Link>
 
             {/* Botões menores */}
             <View style={styles.rowButtons}>
@@ -34,17 +35,6 @@ export default function Index() {
                     <Text style={styles.smallButtonText}>Explorar</Text>
                 </Pressable>
             </View>
-
-            {/* Estrelas embaixo */}
-            {/* <Image
-                source={require('../../assets/star-left.png')}
-                style={styles.starLeft}
-            />
-
-            <Image
-                source={require('../../assets/star-right.png')}
-                style={styles.starRight}
-            /> */}
 
         </View>
     );

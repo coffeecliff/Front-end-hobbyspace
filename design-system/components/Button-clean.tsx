@@ -5,7 +5,7 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
 // Importa tokens de cores do design system
-import { Colors } from '../tokens/colors';
+import { Colors, lightTheme } from '../tokens/colors';
 
 // Importa estilos tipográficos
 import { TextStyles } from '../tokens/typography';
@@ -154,3 +154,5 @@ const styles = StyleSheet.create({
     color: Colors.primary,             // Cor principal
   },
 });
+
+
