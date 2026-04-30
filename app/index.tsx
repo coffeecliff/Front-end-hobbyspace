@@ -1,5 +1,6 @@
 import { Text, View, Pressable, Image } from 'react-native';
 import { Link } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 import { welcomeStyles as styles } from '../styles/screens/welcomeStyles';
 
 export default function Index() {
@@ -24,17 +25,35 @@ export default function Index() {
             </Link>
 
             {/* Botões menores */}
-            <View style={styles.rowButtons}>
-                <Link href="/auth/login" asChild>
-                    <Pressable style={styles.smallButton}>
-                        <Text style={styles.smallButtonText}>Entrar</Text>
-                    </Pressable>
-                </Link>
-
+                <View style={styles.rowButtons}>
+            <Link href="/auth/login" asChild>
                 <Pressable style={styles.smallButton}>
-                    <Text style={styles.smallButtonText}>Explorar</Text>
+                    <View style={styles.buttonContent}>
+                        <Ionicons name="log-in-outline" size={18} color="#333" />
+                        <Text style={styles.smallButtonText}>Entrar</Text>
+                    </View>
                 </Pressable>
-            </View>
+            </Link>
+
+            <Pressable style={styles.smallButton}>
+                <View style={styles.buttonContent}>
+                    <Ionicons name="compass-outline" size={18} color="#333" />
+                    <Text style={styles.smallButtonText}>Explorar</Text>
+                </View>
+            </Pressable>
+        </View>
+
+            {/* Estrelas embaixo */}
+            <Image
+                source={require('../assets/starleft.png')}
+                style={styles.starLeft}
+            />
+ 
+            <Image
+                source={require('../assets/starright.png')}
+                style={styles.starRight}
+            />
+ 
 
         </View>
     );
