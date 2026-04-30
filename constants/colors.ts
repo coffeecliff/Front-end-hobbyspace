@@ -19,10 +19,12 @@ export const colors = {
     success: '#6FCF97',
     warning: '#F59E0B',
     shadow: 'rgba(108, 59, 255, 0.08)',
+    
     chat: {
-        userBubble: '#6C3BFF',
-        otherBubble: '#F3E8FF',
-        useText: '#FFFFFF',
-        other: '#2D1B69',
+        userBubble: '#7f62ff',
+        useText: '#FFF',
+
+        otherBubble: '#FFF',
+        other: '#222',
     }
 }
