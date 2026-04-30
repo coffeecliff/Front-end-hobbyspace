@@ -11,7 +11,7 @@ export default function Index() {
             </Link>
             <Link href="/auth/login" asChild>
                 <Pressable style={{ padding: 10, backgroundColor: '#000' }}>
-                    <Text style={{ color: '#fff' }}>Ir para Login</Text>
+                    <Text style={{ color: 'rgba(13, 9, 255, 0.87)' }}>Ir para Login</Text>
                 </Pressable>
             </Link>
         </View>
