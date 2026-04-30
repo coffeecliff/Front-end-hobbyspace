@@ -9,7 +9,7 @@ export default function Index() {
 
             {/* Logo no topo */}
           <Image
-                source={require('../assets/logotextotransparente.png')}
+                source={require('../assets/logotexto.png')}
                 style={styles.logo}
                 resizeMode="contain"
             />
