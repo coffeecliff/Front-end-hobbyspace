@@ -8,7 +8,7 @@ export default function Login() {
 
             {/* Logo */}
             <Image
-                source={require('../../assets/logotransparente.png')}
+                source={require('../../assets/logoG.png')}
                 style={styles.logo}
                 resizeMode="contain"
             />
