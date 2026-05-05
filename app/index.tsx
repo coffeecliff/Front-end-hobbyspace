@@ -7,8 +7,15 @@ export default function Index() {
     return (
         <View style={styles.container}>
 
+            {/* FUNDO COM IMAGEM */}
+            <Image
+                source={require('../assets/backgrounds/bg1.png')} // coloque sua imagem aqui
+                style={styles.background}
+                resizeMode="cover"
+            />
+
             {/* Logo no topo */}
-          <Image
+            <Image
                 source={require('../assets/logotexto.png')}
                 style={styles.logo}
                 resizeMode="contain"
@@ -25,35 +32,34 @@ export default function Index() {
             </Link>
 
             {/* Botões menores */}
-                <View style={styles.rowButtons}>
-            <Link href="/auth/login" asChild>
+            <View style={styles.rowButtons}>
+                <Link href="/auth/login" asChild>
+                    <Pressable style={styles.smallButton}>
+                        <View style={styles.buttonContent}>
+                            <Ionicons name="log-in-outline" size={18} color="#333" />
+                            <Text style={styles.smallButtonText}>Entrar</Text>
+                        </View>
+                    </Pressable>
+                </Link>
+
                 <Pressable style={styles.smallButton}>
                     <View style={styles.buttonContent}>
-                        <Ionicons name="log-in-outline" size={18} color="#333" />
-                        <Text style={styles.smallButtonText}>Entrar</Text>
+                        <Ionicons name="compass-outline" size={18} color="#333" />
+                        <Text style={styles.smallButtonText}>Explorar</Text>
                     </View>
                 </Pressable>
-            </Link>
+            </View>
 
-            <Pressable style={styles.smallButton}>
-                <View style={styles.buttonContent}>
-                    <Ionicons name="compass-outline" size={18} color="#333" />
-                    <Text style={styles.smallButtonText}>Explorar</Text>
-                </View>
-            </Pressable>
-        </View>
-
-            {/* Estrelas embaixo */}
+            {/* Estrelas */}
             <Image
                 source={require('../assets/starleft.png')}
                 style={styles.starLeft}
             />
- 
+
             <Image
                 source={require('../assets/starright.png')}
                 style={styles.starRight}
             />
- 
 
         </View>
     );

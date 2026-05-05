@@ -34,10 +34,12 @@ export default function Register() {
     };
 
     return (
-        <LinearGradient
-            colors={['#E9DDF5', '#F5D0FE']}
-            style={{ flex: 1 }}
-        >
+        <View style={styles.container}>
+            <Image
+                source={require('../../assets/backgrounds/bg2.png')} // coloque sua imagem aqui
+                style={styles.background}
+                resizeMode="cover"
+            />
             <KeyboardAvoidingView
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                 keyboardVerticalOffset={Platform.OS === "android" ? -85 : 0}
@@ -47,7 +49,7 @@ export default function Register() {
                 {/* TOPO */}
                 <View style={styles.header}>
                     <Image
-                        source={require('../../assets/logo.png')}
+                        source={require('../../assets/logoG.png')}
                         resizeMode='contain'
                         style={styles.logo}
                     />
@@ -127,13 +129,13 @@ export default function Register() {
                     </View>
 
                     {/* Google */}
-                <TouchableOpacity style={styles.googleButton}>
-                    <Text style={styles.googleText}>Google</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.googleButton}>
+                        <Text style={styles.googleText}>Google</Text>
+                    </TouchableOpacity>
 
-            </View>
-            
-            {/* Login */}
+                </View>
+
+                {/* Login */}
                 <TouchableOpacity onPress={() => router.push('/auth/login')}>
                     <Text style={styles.loginText}>
                         Já possui uma conta? <Text style={styles.link}>Entrar</Text>
@@ -141,6 +143,6 @@ export default function Register() {
                 </TouchableOpacity>
 
             </KeyboardAvoidingView>
-        </LinearGradient>
+        </View>
     );
 }

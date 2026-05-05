@@ -3,10 +3,17 @@ import { StyleSheet } from 'react-native';
 export const registerStyles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#E9DDF5', // fallback (caso não use gradient)
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
+    },
+    background: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0, 
+        opacity: 0.6,
     },
 
     header: {

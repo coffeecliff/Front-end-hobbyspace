@@ -5,10 +5,15 @@ import { Ionicons } from '@expo/vector-icons';
 export default function Login() {
     return (
         <View style={styles.container}>
+            <Image
+                source={require('../../assets/backgrounds/bg2.png')}
+                style={styles.background}
+                resizeMode="cover"
+            />
 
             {/* Logo */}
             <Image
-                source={require('../../assets/logotransparente.png')}
+                source={require('../../assets/logoG.png')}
                 style={styles.logo}
                 resizeMode="contain"
             />
@@ -59,7 +64,7 @@ export default function Login() {
                 {/* Google */}
                 <Pressable style={styles.googleButton}>
                     <Image
-                        source={require('../../assets/google.png')}
+                        source={require('../../assets/icon.png')}
                         style={styles.googleIcon}
                     />
                     <Text style={styles.googleText}>Google</Text>

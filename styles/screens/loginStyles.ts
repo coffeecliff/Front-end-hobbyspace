@@ -7,6 +7,14 @@ export const loginStyles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 60,
     },
+    background: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0, 
+        opacity: 0.6,
+    },
 
     logo: {
         width: 200, // 🔥 maior
