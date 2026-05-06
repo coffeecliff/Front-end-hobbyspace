@@ -1,8 +1,32 @@
-import { Text, View, TextInput, Pressable, Image } from 'react-native';
+import React, {useState} from 'react';
+import { Text, View, TextInput, Pressable, Image, TouchableOpacity, Alert } from 'react-native';
 import { loginStyles as styles } from '../../styles/screens/loginStyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function Login() {
+    const router = useRouter();
+    // const { login } = useAuth();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loading, _setLoading] = useState(false);
+    const handleLogin = async () => {
+        if (!email || !password) {
+            Alert.alert('Erro', 'Por favor, preencha todos os campos');
+            return;
+        }
+        try {
+            // const success = await Login(email, password);
+            // if (success) {
+            //     router.replace('/home');
+            // } else {
+            //     Alert.alert('Erro', 'Credenciais inválidas. Tente novamente.');
+            // }
+            router.replace('/home');
+        } catch (error) {
+            Alert.alert('Erro', 'Ocorreu um erro ao tentar fazer login. Tente novamente.')
+        }
+    };
     return (
         <View style={styles.container}>
             <Image
@@ -73,9 +97,11 @@ export default function Login() {
             </View>
 
             {/* Footer */}
-            <Text style={styles.footerText}>
-                Não tem uma conta? <Text style={styles.link}>Cadastre-se</Text>
-            </Text>
+            <TouchableOpacity onPress={() => router.push('/auth/register')}>
+                <Text style={styles.footerText}>
+                    Já possui uma conta? <Text style={styles.link}>Entrar</Text>
+                </Text>
+            </TouchableOpacity>
 
         </View>
     );
