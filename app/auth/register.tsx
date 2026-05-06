@@ -1,4 +1,13 @@
-import { Text, View, Alert, KeyboardAvoidingView, Platform, Image, TouchableOpacity } from 'react-native';
+import {
+    Text,
+    View,
+    Alert,
+    Image,
+    TouchableOpacity,
+    KeyboardAvoidingView,
+    Platform,
+    ScrollView
+} from 'react-native';
 
 import React, { useState } from 'react';
 import { useRouter } from 'expo-router';
@@ -17,54 +26,58 @@ export default function Register() {
 
     const handleRegister = async () => {
         if (!name || !email || !password || !confirmPassword) {
-            Alert.alert('Error', 'Por favor, preencha os campo');
+            Alert.alert('Error', 'Por favor, preencha os campos');
             return;
         }
 
-        if (password.length <= 8 && password !== confirmPassword) {
-            Alert.alert('Error', 'As senhas não coincidem ou são muito curtas. Tente novamente.');
+        if (password.length <= 8 || password !== confirmPassword) {
+            Alert.alert('Error', 'As senhas não coincidem ou são muito curtas.');
             return;
         }
 
         try {
             router.replace('/home');
         } catch (error) {
-            Alert.alert('Error', 'Ocorreu um erro ao tentar registrar. Tente novamente');
+            Alert.alert('Error', 'Erro ao registrar');
         }
     };
 
     return (
         <View style={styles.container}>
+            {/* Background */}
             <Image
-                source={require('../../assets/backgrounds/bg2.png')} // coloque sua imagem aqui
+                source={require('../../assets/backgrounds/bg2.png')}
                 style={styles.background}
                 resizeMode="cover"
             />
-            <KeyboardAvoidingView
-                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                keyboardVerticalOffset={Platform.OS === "android" ? -85 : 0}
-                style={styles.container}
-            >
 
-                {/* TOPO */}
-                <View style={styles.header}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+                style={{ flex: 1, width: '100%' }}
+            >
+                <ScrollView
+                    contentContainerStyle={{
+                        alignItems: 'center',
+                        paddingBottom: 40
+                    }}
+                    showsVerticalScrollIndicator={false}
+                >
+
+                    {/* 🔥 IGUAL AO LOGIN */}
                     <Image
                         source={require('../../assets/logoG.png')}
-                        resizeMode='contain'
                         style={styles.logo}
+                        resizeMode="contain"
                     />
 
                     <Text style={styles.title}>HobbySpace</Text>
-
                     <Text style={styles.subtitle}>
                         Junte-se à maior comunidade de entusiastas!
                     </Text>
-                </View>
 
-                {/* CARD */}
-                <View style={styles.card}>
+                    {/* CARD */}
+                    <View style={styles.card}>
 
-                    <View style={styles.inputContainer}>
                         <Input
                             label='NOME DE USUÁRIO'
                             value={name}
@@ -96,52 +109,52 @@ export default function Register() {
                             secureTextEntry
                             placeholder='********'
                         />
-                    </View>
 
-                    {/* BOTÃO COM GRADIENTE */}
-                    <TouchableOpacity
-                        onPress={handleRegister}
-                        disabled={loading}
-                        style={{ width: '100%', marginTop: 20 }}
-                    >
-                        <LinearGradient
-                            colors={['#6D28D9', '#9333EA']}
-                            style={styles.gradientButton}
+                        {/* BOTÃO */}
+                        <TouchableOpacity
+                            onPress={handleRegister}
+                            disabled={loading}
+                            style={{ width: '100%', marginTop: 20 }}
                         >
-                            <Text style={styles.buttonText}>
-                                {loading ? 'Cadastrando...' : 'Cadastrar'}
+                            <LinearGradient
+                                colors={['#6D28D9', '#9333EA']}
+                                style={styles.gradientButton}
+                            >
+                                <Text style={styles.buttonText}>
+                                    {loading ? 'Cadastrando...' : 'Cadastrar'}
+                                </Text>
+                            </LinearGradient>
+                        </TouchableOpacity>
+
+                        {/* TERMOS */}
+                        <View style={styles.termsContainer}>
+                            <Text style={styles.termsText}>
+                                ☑ Aceitar os <Text style={styles.termsLink}>termos de uso</Text>
                             </Text>
-                        </LinearGradient>
-                    </TouchableOpacity>
+                        </View>
 
-                    {/* TERMOS */}
-                    <View style={styles.termsContainer}>
-                        <Text style={styles.termsText}>
-                            ☑ Aceitar os <Text style={styles.termsLink}>termos de uso</Text>
+                        {/* DIVIDER */}
+                        <View style={styles.dividerContainer}>
+                            <View style={styles.line} />
+                            <Text style={styles.dividerText}>Ou entre com</Text>
+                            <View style={styles.line} />
+                        </View>
+
+                        {/* GOOGLE */}
+                        <TouchableOpacity style={styles.googleButton}>
+                            <Text style={styles.googleText}>Google</Text>
+                        </TouchableOpacity>
+
+                    </View>
+
+                    {/* FOOTER */}
+                    <TouchableOpacity onPress={() => router.push('/auth/login')}>
+                        <Text style={styles.loginText}>
+                            Já possui uma conta? <Text style={styles.link}>Entrar</Text>
                         </Text>
-                    </View>
-
-                    {/* DIVIDER */}
-                    <View style={styles.dividerContainer}>
-                        <View style={styles.line} />
-                        <Text style={styles.dividerText}>Ou entre com</Text>
-                        <View style={styles.line} />
-                    </View>
-
-                    {/* Google */}
-                    <TouchableOpacity style={styles.googleButton}>
-                        <Text style={styles.googleText}>Google</Text>
                     </TouchableOpacity>
 
-                </View>
-
-                {/* Login */}
-                <TouchableOpacity onPress={() => router.push('/auth/login')}>
-                    <Text style={styles.loginText}>
-                        Já possui uma conta? <Text style={styles.link}>Entrar</Text>
-                    </Text>
-                </TouchableOpacity>
-
+                </ScrollView>
             </KeyboardAvoidingView>
         </View>
     );
