@@ -2,7 +2,6 @@ import { Text, View, Pressable, Image } from 'react-native';
 import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { welcomeStyles as styles } from '../styles/screens/welcomeStyles';
-
 export default function Index() {
     return (
         <View style={styles.container}>
@@ -62,5 +61,6 @@ export default function Index() {
             />
 
         </View>
+        
     );
 }
