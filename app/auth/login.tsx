@@ -88,7 +88,7 @@ export default function Login() {
                 {/* Google */}
                 <Pressable style={styles.googleButton}>
                     <Image
-                        source={require('../../assets/icon.png')}
+                        source={require('../../assets/google.png')}
                         style={styles.googleIcon}
                     />
                     <Text style={styles.googleText}>Google</Text>

@@ -41,12 +41,15 @@ export default function Index() {
                     </Pressable>
                 </Link>
 
-                <Pressable style={styles.smallButton}>
-                    <View style={styles.buttonContent}>
-                        <Ionicons name="compass-outline" size={18} color="#333" />
-                        <Text style={styles.smallButtonText}>Explorar</Text>
-                    </View>
-                </Pressable>
+             {/* ROTA PARA A HOME NO EXPLORAR */}
+        <Link href="/home" asChild> 
+            <Pressable style={styles.smallButton}>
+                <View style={styles.buttonContent}>
+                    <Ionicons name="compass-outline" size={18} color="#333" />
+                    <Text style={styles.smallButtonText}>Explorar</Text>
+                </View>
+            </Pressable>
+        </Link>
             </View>
 
             {/* Estrelas */}
