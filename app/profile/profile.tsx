@@ -13,12 +13,19 @@ import {
   MaterialCommunityIcons,
 } from '@expo/vector-icons';
 
+// ROUTER
+import { useRouter } from 'expo-router';
+
+// STYLES
 import { profileStyles as styles } from '../../styles/screens/profile.Styles';
 
 // COMPONENTE BOTTOM BAR
 import { BottomBar } from '../../components/BottomBar';
 
 export default function Perfil() {
+
+  // ROUTER
+  const router = useRouter();
 
   return (
 
@@ -40,7 +47,9 @@ export default function Perfil() {
           </Text>
 
           {/* BOTÃO CONFIG */}
-          <Pressable>
+          <Pressable
+            onPress={() => router.push('/settings')}
+          >
 
             <Ionicons
               name="settings-sharp"
@@ -139,7 +148,7 @@ export default function Perfil() {
 
         <View style={styles.insigniaRow}>
 
-          {/* INSÍGNIA FOTO */}
+          {/* INSÍGNIA 1 */}
           <View style={styles.insigniaItem}>
 
             <Image
@@ -158,7 +167,7 @@ export default function Perfil() {
 
           </View>
 
-          {/* INSÍGNIA CULINÁRIA */}
+          {/* INSÍGNIA 2 */}
           <View style={styles.insigniaItem}>
 
             <Image
@@ -177,7 +186,7 @@ export default function Perfil() {
 
           </View>
 
-          {/* INSÍGNIA VAZIA */}
+          {/* INSÍGNIA 3 */}
           <View style={styles.insigniaItem}>
 
             <Image
@@ -191,7 +200,7 @@ export default function Perfil() {
 
           </View>
 
-          {/* INSÍGNIA VAZIA */}
+          {/* INSÍGNIA 4 */}
           <View style={styles.insigniaItem}>
 
             <Image
