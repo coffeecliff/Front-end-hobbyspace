@@ -61,7 +61,8 @@ export const settingsStyles = StyleSheet.create({
     textAlign: 'center',
 
     fontSize: 24,
-    fontWeight: '800',
+    
+    fontWeight: '700',
 
     color: '#6A0DAD',
   },
