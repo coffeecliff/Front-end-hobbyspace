@@ -29,12 +29,12 @@ export function BottomBar() {
       {/* ================= CHAT IA ================= */}
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push("/chatIA")}
+        onPress={() => router.push("/chat")}
       >
 
         <Image
           source={
-            pathname === "/chatIA"
+            pathname === "/chat"
               ? require("../assets/chatIAcor.png")
               : require("../assets/chat.png")
           }
@@ -83,47 +83,57 @@ export function BottomBar() {
 
 const styles = StyleSheet.create({
 
-  // ================= BARRA =================
-  container: {
-    position: "absolute",
-    bottom: 0,
+ // ================= BARRA =================
+container: {
+  position: "absolute",
+  bottom: 0,
 
-    width: "100%",
-    height: 90,
+  width: "100%",
+  height: 90,
 
-    backgroundColor: "#f1f2f2",
+  backgroundColor: "#f1f2f2",
 
-    flexDirection: "row",
+  flexDirection: "row",
 
-    alignItems: "center",
-    justifyContent: "space-around",
+  alignItems: "center",
+  justifyContent: "space-around",
 
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
+  borderTopLeftRadius: 25,
+  borderTopRightRadius: 25,
 
-    elevation: 10,
+  // SOMBRA IOS
+  shadowColor: "#000",
+  shadowOffset: {
+    width: 0,
+    height: -4,
   },
+  shadowOpacity: 0.12,
+  shadowRadius: 10,
 
-  // ================= BOTÕES =================
-  button: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  // SOMBRA ANDROID
+  elevation: 10,
+},
 
-  // ================= ÍCONES =================
-  icon: {
-    width: 54,
-    height: 54,
+// ================= BOTÕES =================
+button: {
+  alignItems: "center",
+  justifyContent: "center",
+},
 
-    resizeMode: "contain",
-  },
+// ================= ÍCONES =================
+icon: {
+  width: 54,
+  height: 54,
 
-  // ================= HOBBY =================
-  hobbyIcon: {
-    width: 85,
-    height: 85,
+  resizeMode: "contain",
+},
 
-    resizeMode: "contain",
-  },
+// ================= HOBBY =================
+hobbyIcon: {
+  width: 85,
+  height: 85,
+
+  resizeMode: "contain",
+},
 
 });

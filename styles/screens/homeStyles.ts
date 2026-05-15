@@ -14,9 +14,11 @@ export const homestyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: '#fff',
 
     paddingHorizontal: 20,
     marginBottom: 20,
+    marginTop: -20,
   },
 
   // LOGO

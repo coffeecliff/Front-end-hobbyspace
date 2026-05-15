@@ -48,7 +48,9 @@ export default function Home() {
           <View style={styles.headerIcons}>
 
             {/* BOTÃO DE NOTIFICAÇÃO */}
-            <Pressable style={styles.notificationBtn}
+            <Pressable
+              style={styles.notificationBtn}
+              onPress={() => router.push("/notifications")}
             >
 
               <Ionicons
@@ -56,9 +58,6 @@ export default function Home() {
                 size={28}
                 color="#4B0082"
               />
-
-              {/* BOLINHA VERMELHA */}
-              
 
             </Pressable>
 
@@ -119,7 +118,7 @@ export default function Home() {
 
             <Text style={styles.verMais}>
               Ver Todos
-              
+
             </Text>
 
           </Pressable>
@@ -242,149 +241,149 @@ export default function Home() {
         {/* ================= GRID DESCOBRIR ================= */}
         <View style={styles.gridContainer}>
 
-  {/* ================= COLUNA ESQUERDA ================= */}
-  <View style={styles.column}>
+          {/* ================= COLUNA ESQUERDA ================= */}
+          <View style={styles.column}>
 
-    {/* CARD FOTOGRAFIA */}
-    <Pressable
-      style={[
-        styles.discoverCard,
-        { height: 220 }
-      ]}
-      onPress={() => router.push('/categoria/fotografia')}
-    >
+            {/* CARD FOTOGRAFIA */}
+            <Pressable
+              style={[
+                styles.discoverCard,
+                { height: 220 }
+              ]}
+              onPress={() => router.push('/categoria/fotografia')}
+            >
 
-      <ImageBackground
-        source={{
-          uri: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32'
-        }}
-        style={styles.discoverImg}
-        imageStyle={styles.imageRadius}
-      >
+              <ImageBackground
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32'
+                }}
+                style={styles.discoverImg}
+                imageStyle={styles.imageRadius}
+              >
 
-        <View style={styles.cardOverlay}>
+                <View style={styles.cardOverlay}>
 
-          <Text style={styles.cardTitle}>
-            Fotografia
-          </Text>
+                  <Text style={styles.cardTitle}>
+                    Fotografia
+                  </Text>
 
-          <Text style={styles.cardSub}>
-            2.5K Pessoas
-          </Text>
+                  <Text style={styles.cardSub}>
+                    2.5K Pessoas
+                  </Text>
+
+                </View>
+
+              </ImageBackground>
+
+            </Pressable>
+
+            {/* CARD CROCHÊ */}
+            <Pressable
+              style={[
+                styles.discoverCard,
+                { height: 160 }
+              ]}
+              onPress={() => router.push('/categoria/croche')}
+            >
+
+              <ImageBackground
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1517849845537-4d257902454a'
+                }}
+                style={styles.discoverImg}
+                imageStyle={styles.imageRadius}
+              >
+
+                <View style={styles.cardOverlay}>
+
+                  <Text style={styles.cardTitle}>
+                    Crochê
+                  </Text>
+
+                  <Text style={styles.cardSub}>
+                    2.5K Pessoas
+                  </Text>
+
+                </View>
+
+              </ImageBackground>
+
+            </Pressable>
+
+          </View>
+
+          {/* ================= COLUNA DIREITA ================= */}
+          <View style={styles.column}>
+
+            {/* CARD JARDINAGEM */}
+            <Pressable
+              style={[
+                styles.discoverCard,
+                { height: 160 }
+              ]}
+              onPress={() => router.push('/categoria/jardinagem')}
+            >
+
+              <ImageBackground
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735'
+                }}
+                style={styles.discoverImg}
+                imageStyle={styles.imageRadius}
+              >
+
+                <View style={styles.cardOverlay}>
+
+                  <Text style={styles.cardTitle}>
+                    Jardinagem
+                  </Text>
+
+                  <Text style={styles.cardSub}>
+                    1.4K Pessoas
+                  </Text>
+
+                </View>
+
+              </ImageBackground>
+
+            </Pressable>
+
+            {/* CARD CALIGRAFIA */}
+            <Pressable
+              style={[
+                styles.discoverCard,
+                { height: 220 }
+              ]}
+              onPress={() => router.push('/categoria/caligrafia')}
+            >
+
+              <ImageBackground
+                source={{
+                  uri: 'https://images.unsplash.com/photo-1455390582262-044cdead277a'
+                }}
+                style={styles.discoverImg}
+                imageStyle={styles.imageRadius}
+              >
+
+                <View style={styles.cardOverlay}>
+
+                  <Text style={styles.cardTitle}>
+                    Caligrafia
+                  </Text>
+
+                  <Text style={styles.cardSub}>
+                    3.3K Pessoas
+                  </Text>
+
+                </View>
+
+              </ImageBackground>
+
+            </Pressable>
+
+          </View>
 
         </View>
-
-      </ImageBackground>
-
-    </Pressable>
-
-    {/* CARD CROCHÊ */}
-    <Pressable
-      style={[
-        styles.discoverCard,
-        { height: 160 }
-      ]}
-      onPress={() => router.push('/categoria/croche')}
-    >
-
-      <ImageBackground
-        source={{
-          uri: 'https://images.unsplash.com/photo-1517849845537-4d257902454a'
-        }}
-        style={styles.discoverImg}
-        imageStyle={styles.imageRadius}
-      >
-
-        <View style={styles.cardOverlay}>
-
-          <Text style={styles.cardTitle}>
-            Crochê
-          </Text>
-
-          <Text style={styles.cardSub}>
-            2.5K Pessoas
-          </Text>
-
-        </View>
-
-      </ImageBackground>
-
-    </Pressable>
-
-  </View>
-
-  {/* ================= COLUNA DIREITA ================= */}
-  <View style={styles.column}>
-
-    {/* CARD JARDINAGEM */}
-    <Pressable
-      style={[
-        styles.discoverCard,
-        { height: 160 }
-      ]}
-      onPress={() => router.push('/categoria/jardinagem')}
-    >
-
-      <ImageBackground
-        source={{
-          uri: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735'
-        }}
-        style={styles.discoverImg}
-        imageStyle={styles.imageRadius}
-      >
-
-        <View style={styles.cardOverlay}>
-
-          <Text style={styles.cardTitle}>
-            Jardinagem
-          </Text>
-
-          <Text style={styles.cardSub}>
-            1.4K Pessoas
-          </Text>
-
-        </View>
-
-      </ImageBackground>
-
-    </Pressable>
-
-    {/* CARD CALIGRAFIA */}
-    <Pressable
-      style={[
-        styles.discoverCard,
-        { height: 220 }
-      ]}
-      onPress={() => router.push('/categoria/caligrafia')}
-    >
-
-      <ImageBackground
-        source={{
-          uri: 'https://images.unsplash.com/photo-1455390582262-044cdead277a'
-        }}
-        style={styles.discoverImg}
-        imageStyle={styles.imageRadius}
-      >
-
-        <View style={styles.cardOverlay}>
-
-          <Text style={styles.cardTitle}>
-            Caligrafia
-          </Text>
-
-          <Text style={styles.cardSub}>
-            3.3K Pessoas
-          </Text>
-
-        </View>
-
-      </ImageBackground>
-
-    </Pressable>
-
-  </View>
-
-</View>
 
         {/* ================= ESPAÇO DA BOTTOMBAR ================= */}
         <View style={{ height: 120 }} />
